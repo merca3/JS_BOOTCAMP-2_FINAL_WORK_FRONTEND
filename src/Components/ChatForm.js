@@ -1,7 +1,13 @@
 import axios from "axios";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 
-function ChatForm( {username, setUsername, message, setMessage, reloadTaskList}) {
+function ChatForm({ reloadMessageList }) {
+    const { register, formState: { errors }, handleSubmit } = useForm();
+
+
+    const [username, setUsername] = useState('');
+    const [message, setMessage] = useState('');
 
     const changeUsername = (event) => {
         setUsername(event.target.value);
@@ -10,8 +16,7 @@ function ChatForm( {username, setUsername, message, setMessage, reloadTaskList})
     const changeMessage = (event) => {
         setMessage(event.target.value);
     }
-
-    const makeNewMessage = async () => {
+    const onSubmit = async () => {
         if (username === '') {
             alert('Please fill the Username!');
             return;
@@ -27,13 +32,15 @@ function ChatForm( {username, setUsername, message, setMessage, reloadTaskList})
             await axios.post(url, data);
             setUsername('');
             setMessage('');
+            reloadMessageList();
         } catch (e) {
             alert('Something went wrong when talking to the server');
         }
     }
 
+
     return (
-        <form className="bg-secondary text-light p-3 my-2 text-dark rounded">
+        <form className="bg-secondary text-light p-3 my-2 text-dark rounded" onSubmit={handleSubmit(onSubmit)}>
             <div className="row justify-content-between">
                 <div className="col-10 text-info fw-bold">
                     <div className="row">
@@ -42,7 +49,14 @@ function ChatForm( {username, setUsername, message, setMessage, reloadTaskList})
                                 <label>Username:</label>
                             </div>
                             <div>
-                                <input className="form-control" type="text" onChange={changeUsername} value={username} />
+                                <input {...register("Username", {
+                                    required: '  Username is required',
+                                    minLength: {
+                                        value: 3,
+                                        message: '  Username must be min 3 symbols long'
+                                    }
+                                })} className="form-control" onChange={changeUsername} value={username} />
+                                {errors.Username?.message}
                             </div>
                         </div>
                     </div>
@@ -50,11 +64,12 @@ function ChatForm( {username, setUsername, message, setMessage, reloadTaskList})
                         <label>Message:</label>
                     </div>
                     <div>
-                        <textarea className="form-control" onChange={changeMessage} value={message} />
+                        <textarea {...register("Message", {required: '  Please enter a message'})} className="form-control" onChange={changeMessage} value={message} />
+                        {errors.Message?.message}
                     </div>
                 </div>
                 <div className="col-2 d-grid gap-2 d-block align-items-end">
-                    <button className="text-primary fw-bold btn btn-light btn-outline-info" type="submit" onClick={makeNewMessage} >Send</button>
+                    <button className="text-primary fw-bold btn btn-light btn-outline-info" type="submit" >Send</button>
                 </div>
             </div>
         </form>

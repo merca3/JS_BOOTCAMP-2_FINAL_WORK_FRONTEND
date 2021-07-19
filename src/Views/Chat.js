@@ -9,11 +9,9 @@ function Chat() {
         { title: 'Chat' },
     ]
 
-    const [username, setUsername] = useState('');
-    const [message, setMessage] = useState('');
     const [counter, setCounter] = useState(0);
 
-    const reloadTaskList = () => {
+    const reloadMessageList = () => {
         setCounter(counter + 1);
     }
 
@@ -21,8 +19,8 @@ function Chat() {
         <div className="container">
             <Breadcrumbs paths={BreadcrumbPaths} />
             <h2 className="text-info mb-4">Chat</h2>
-            <ChatMessagesList counter={counter} reloadTaskList={reloadTaskList} />
-            <ChatForm username={username} setUsername={setUsername} message={message} setMessage={setMessage} reloadTaskList={reloadTaskList} />
+            <ChatMessagesList counter={counter} reloadMessageList={reloadMessageList} />
+            <ChatForm reloadMessageList={reloadMessageList} />
         </div>
     )
 }
