@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { format } from "date-fns";
 import axios from "axios";
 import NewChatMessage from "../Components/NewChatMessage";
 
@@ -16,10 +17,10 @@ function ChatMessagesList({ reloadMessageList, counter }) {
         try {
             const url = 'http://localhost:8070/chat-messages';
             const response = await axios.get(url);
-            // setMessages({
-            //     loading: false,
-            //     items: [response.data],
-            // });
+            setMessages({
+                loading: false,
+                items: response.data,
+            });
         } catch (e) {
             alert('Whoops, something went wrong');
             setMessages({
@@ -33,19 +34,23 @@ function ChatMessagesList({ reloadMessageList, counter }) {
         loadMessages();
     }, [counter])
 
-    let content = <h5>Loading...</h5>
-    if (!messages.loading && messages.items.length === 0) {
-        content = <h5>No tasks added</h5>
-    } else if (!messages.loading) {
+    let content = <h5 className="p-5">Loading...</h5>
+    if (!messages.loading) {
         const messagesElements = messages
             .items
-            .map((username, message, time, index) => <NewChatMessage
-                username={username}
-                message={message}
-                time={time}
-                key={index}
-                reloadMessageList={reloadMessageList}
-            />)
+            .map(({ username, message, createdAt }, index) => {
+                const time = format(new Date(createdAt), "dd-MM-yyyy HH:mm");
+                console.log(time);
+                return (
+                    <NewChatMessage
+                        username={username}
+                        message={message}
+                        time={time}
+                        key={index}
+                        reloadMessageList={reloadMessageList}
+                    />
+                )
+            })
 
         content = (
             <ul className="list-group">

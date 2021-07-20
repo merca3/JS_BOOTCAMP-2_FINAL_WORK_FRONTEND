@@ -67,7 +67,7 @@ function Home() {
                         <div className="card-body">
                             <h4 className="card-title">Black Widow</h4>
                             <p className="card-text">Natasha Romanoff confronts the darker parts of her ledger when a dangerous conspiracy with ties to her past arises.</p>
-                            <NavLink to="/" className="btn btn-info">Read More</NavLink>
+                            <NavLink to="/movies/black-widow" className="btn btn-info">Read More</NavLink>
                         </div>
                     </div>
                     <div className="col card border border-info bg-dark text-light">
@@ -75,7 +75,7 @@ function Home() {
                         <div className="card-body">
                             <h4 className="card-title">F9: The Fast Saga</h4>
                             <p className="card-text">Cipher enlists the help of Jakob, Dom's younger brother to take revenge on Dom and his team.</p>
-                            <NavLink to="/" className="btn btn-info">Read More</NavLink>
+                            <NavLink to="/movies/f9" className="btn btn-info">Read More</NavLink>
                         </div>
                     </div>
                     <div className="col card border border-info bg-dark text-light">
@@ -83,7 +83,7 @@ function Home() {
                         <div className="card-body">
                             <h4 className="card-title">The Croods: A New Age</h4>
                             <p className="card-text">The prehistoric family the Croods are challenged by a rival family the Bettermans, who claim to be better and more evolved.</p>
-                            <NavLink to="/" className="btn btn-info">Read More</NavLink>
+                            <NavLink to="/movies/croods2" className="btn btn-info">Read More</NavLink>
                         </div>
                     </div>
                 </div>
