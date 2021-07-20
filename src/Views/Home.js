@@ -26,28 +26,44 @@ function Home() {
                 </div>
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img src={Pic1} className="d-block w-100" alt="black-widow" />
+                        <NavLink to="/movies/black-widow">
+                            <img src={Pic1} className="d-block w-100" alt="black-widow" />
+                        </NavLink>
                     </div>
                     <div className="carousel-item">
-                        <img src={Pic2} className="d-block w-100" alt="croods2" />
+                        <NavLink to="/movies/croods2">
+                            <img src={Pic2} className="d-block w-100" alt="croods2" />
+                        </NavLink>
                     </div>
                     <div className="carousel-item">
-                        <img src={Pic3} className="d-block w-100" alt="cruella" />
+                        <NavLink to="/movies/cruella">
+                            <img src={Pic3} className="d-block w-100" alt="cruella" />
+                        </NavLink>
                     </div>
                     <div className="carousel-item">
-                        <img src={Pic4} className="d-block w-100" alt="f9" />
+                        <NavLink to="/movies/f9">
+                            <img src={Pic4} className="d-block w-100" alt="f9" />
+                        </NavLink>
                     </div>
                     <div className="carousel-item">
-                        <img src={Pic5} className="d-block w-100" alt="soul" />
+                        <NavLink to="/movies/soul">
+                            <img src={Pic5} className="d-block w-100" alt="soul" />
+                        </NavLink>
                     </div>
                     <div className="carousel-item">
-                        <img src={Pic6} className="d-block w-100" alt="space-jam" />
+                        <NavLink to="/movies/space-jam">
+                            <img src={Pic6} className="d-block w-100" alt="space-jam" />
+                        </NavLink>
                     </div>
                     <div className="carousel-item">
-                        <img src={Pic7} className="d-block w-100" alt="tom-jerry" />
+                        <NavLink to="/movies/tom-and-jerry">
+                            <img src={Pic7} className="d-block w-100" alt="tom-jerry" />
+                        </NavLink>
                     </div>
                     <div className="carousel-item">
-                        <img src={Pic8} className="d-block w-100" alt="wonder-woman" />
+                        <NavLink to="/movies/wonder-woman-1984">
+                            <img src={Pic8} className="d-block w-100" alt="wonder-woman-1984" />
+                        </NavLink>
                     </div>
                 </div>
                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
@@ -61,9 +77,11 @@ function Home() {
             </div>
             <div>
                 <h2 className="text-light my-5">Latest movies:</h2>
-                <div className="row h-100 row-cols-1 row-cols-md-2 row-cols-xl-3 mb-2 text-center">
+                <div className="row h-100 row-cols-1 row-cols-md-2 row-cols-xl-3 mb-2 text-center justify-content-center">
                     <div className="col card border border-info bg-dark text-light">
-                        <img className='img-fluid rounded mt-2' src={Pic1} alt="" />
+                        <NavLink to="/movies/black-widow">
+                            <img className='img-fluid rounded mt-2' src={Pic1} alt="" />
+                        </NavLink>
                         <div className="card-body">
                             <h4 className="card-title">Black Widow</h4>
                             <p className="card-text">Natasha Romanoff confronts the darker parts of her ledger when a dangerous conspiracy with ties to her past arises.</p>
@@ -71,7 +89,9 @@ function Home() {
                         </div>
                     </div>
                     <div className="col card border border-info bg-dark text-light">
-                        <img className='img-fluid rounded mt-2' src={Pic4} alt="" />
+                        <NavLink to="/movies/f9">
+                            <img className='img-fluid rounded mt-2' src={Pic4} alt="" />
+                        </NavLink>
                         <div className="card-body">
                             <h4 className="card-title">F9: The Fast Saga</h4>
                             <p className="card-text">Cipher enlists the help of Jakob, Dom's younger brother to take revenge on Dom and his team.</p>
@@ -79,7 +99,9 @@ function Home() {
                         </div>
                     </div>
                     <div className="col card border border-info bg-dark text-light">
-                        <img className='img-fluid rounded mt-2' src={Pic2} alt="" />
+                        <NavLink to="/movies/croods2">
+                            <img className='img-fluid rounded mt-2' src={Pic2} alt="" />
+                        </NavLink>
                         <div className="card-body">
                             <h4 className="card-title">The Croods: A New Age</h4>
                             <p className="card-text">The prehistoric family the Croods are challenged by a rival family the Bettermans, who claim to be better and more evolved.</p>

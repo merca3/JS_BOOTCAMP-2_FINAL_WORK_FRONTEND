@@ -18,7 +18,7 @@ function Chat() {
     return (
         <div className="container">
             <Breadcrumbs paths={BreadcrumbPaths} />
-            <h2 className="text-info mb-4">Chat</h2>
+            <h2 className="text-light mb-4">Chat</h2>
             <ChatMessagesList counter={counter} reloadMessageList={reloadMessageList} />
             <ChatForm reloadMessageList={reloadMessageList} />
         </div>

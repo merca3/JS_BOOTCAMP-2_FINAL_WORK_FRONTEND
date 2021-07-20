@@ -60,7 +60,7 @@ function ChatMessagesList({ reloadMessageList, counter }) {
     }
 
     return (
-        <ul className="list-group bg-secondary fw-bold overflow-auto" style={{ height: '400px' }}>
+        <ul className="list-group bg-secondary fw-bold overflow-auto border border-info" style={{ height: '400px' }}>
             {content}
         </ul>
     )

@@ -42,9 +42,9 @@ function ChatForm({ reloadMessageList }) {
     return (
         <form className="bg-secondary text-light p-3 my-2 text-dark rounded" onSubmit={handleSubmit(onSubmit)}>
             <div className="row justify-content-between">
-                <div className="col-10 text-info fw-bold">
+                <div className="col-8 col-md-10 text-info fw-bold">
                     <div className="row">
-                        <div className="col-4">
+                        <div className="col-6">
                             <div>
                                 <label>Username:</label>
                             </div>
@@ -68,8 +68,8 @@ function ChatForm({ reloadMessageList }) {
                         {errors.Message?.message}
                     </div>
                 </div>
-                <div className="col-2 d-grid gap-2 d-block align-items-end">
-                    <button className="text-primary fw-bold btn btn-light btn-outline-info" type="submit" >Send</button>
+                <div className="col-4 col-md-2 d-grid gap-2 d-block align-items-end">
+                    <button className="text-dark btn btn-info" type="submit" >Send</button>
                 </div>
             </div>
         </form>

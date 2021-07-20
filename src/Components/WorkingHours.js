@@ -4,10 +4,10 @@ function WorkingHours() {
 
     return (
         <div className="row text-center text-light">
-            <div className="col-4">
-                <img src={Logo} alt="" />
+            <div className="col-12 col-sm-4">
+                <img src={Logo} alt="logo" />
             </div>
-            <div className="col-8">
+            <div className="col-12 col-sm-8">
                 <div className="my-2 fw-bold">Monday 9:00 - 22:00</div>
                 <div className="my-2 fw-bold">Tuesday 9:00 - 22:00</div>
                 <div className="my-2 fw-bold">Wednesday 9:00 - 22:00</div>

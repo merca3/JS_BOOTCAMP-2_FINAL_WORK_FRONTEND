@@ -45,17 +45,17 @@ function AboutUs() {
             </Tabs>
             <h3 className="my-5">Contacts:</h3>
             <div className="row text-center">
-                <div className="col-5">
+                <div className="col-12 col-sm-7 col-lg-6">
                     <Map />
                 </div>
-                <div className="col-7">
+                <div className="col-12 col-sm-5 col-lg-6">
                     <div className="mb-5">
                         <h5>Address:</h5>
                         <p>Latvia, Riga, Street, House Nr</p>
                     </div>
                     <div className="my-5">
                         <h5>Email:</h5>
-                        <p>someemail@inbox.com</p>
+                        <p>info@cinema.com</p>
                     </div>
                     <div className="my-5">
                         <h5>Phone:</h5>

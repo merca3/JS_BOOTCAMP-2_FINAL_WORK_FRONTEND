@@ -26,7 +26,7 @@ function RegisterForm() {
                         value: 5,
                         message: '  Username must be min 5 symbols long'
                     }
-                })} placeholder="Username" className="form-control" />
+                })} placeholder="Username*" className="form-control" />
                 {errors.Username?.message}
             </div>
             <div className="mb-3">
@@ -37,7 +37,7 @@ function RegisterForm() {
                             /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
                         message: '  Please enter a valid Email address',
                     },
-                })} placeholder="Email" className="form-control" />
+                })} placeholder="Email*" className="form-control" />
                 {errors.email?.message}
             </div>
             <div className="mb-3">
@@ -47,7 +47,7 @@ function RegisterForm() {
                         value: 8,
                         message: '  Password must be min 8 symbols long'
                     }
-                })} type="password" name="Password" placeholder="Password" className="form-control" />
+                })} type="password" name="Password" placeholder="Password*" className="form-control" />
                 {errors.Password?.message}
             </div>
             <div className="mb-3">
@@ -59,7 +59,7 @@ function RegisterForm() {
                             return Password === value || 'Passwords should match!';
                         },
                     }
-                })} type="password" placeholder="Repeat Password" className="form-control" />
+                })} type="password" placeholder="Repeat Password*" className="form-control" />
                 {errors.PasswordRepeat?.message}
             </div>
             <div className="mb-3">
@@ -69,7 +69,7 @@ function RegisterForm() {
                         value: 2,
                         message: '  First Name must be min 2 symbols long'
                     }
-                })} placeholder="First Name" className="form-control" />
+                })} placeholder="First Name*" className="form-control" />
                 {errors.FirstName?.message}
             </div>
             <div className="mb-3">
@@ -89,7 +89,7 @@ function RegisterForm() {
                 </div>
             </div>
             <div className="col-6 d-grid mb-3">
-                <input className="text-dark fw-bold btn btn-info submit" type="submit" value="Submit form" />
+                <input className="text-dark btn btn-info submit" type="submit" value="Submit form" />
             </div>
         </form>
     )
