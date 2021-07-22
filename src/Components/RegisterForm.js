@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
 function RegisterForm() {
@@ -84,7 +85,9 @@ function RegisterForm() {
             </div>
             <div className="mb-3">
                 <div className="form-check">
-                    <label className="form-check-label">Agree to terms and conditions*</label>
+                    <label className="form-check-label">Agree to <span> </span>
+                        <NavLink to="/register">Terms and Conditions*</NavLink>
+                    </label>
                     <input className="form-check-input" type="checkbox" {...register("checkbox", { required: true })} />
                     <div>
                         {errors.checkbox?.type === 'required' && "  You must agree to terms and conditions"}
