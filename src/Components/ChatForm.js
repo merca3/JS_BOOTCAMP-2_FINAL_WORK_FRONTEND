@@ -17,11 +17,6 @@ function ChatForm({ reloadMessageList }) {
         setMessage(event.target.value);
     }
     const onSubmit = async () => {
-        if (username === '') {
-            alert('Please fill the Username!');
-            return;
-        }
-
         const url = 'http://localhost:8070/chat-messages';
         const data = {
             username: username,
