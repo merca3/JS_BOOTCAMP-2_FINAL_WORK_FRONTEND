@@ -2,8 +2,11 @@ import React from "react";
 import { useForm } from "react-hook-form";
 
 function RegisterForm() {
-    const { register, formState: { errors }, handleSubmit, getValues } = useForm();
-    const onSubmit = data => console.log(data);
+    const { register, formState: { errors }, handleSubmit, getValues, reset } = useForm();
+    const onSubmit = data => {
+        console.log(data);
+        reset();
+    };
 
     const Select = React.forwardRef(({ onChange, onBlur, name }, ref) => (
         <>
